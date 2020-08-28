@@ -1,0 +1,19 @@
+<template>
+   <div>
+      <div>当前路径不存在，请检查网址是否正确</div>
+      <div>
+         <router-link to="/">返回首页</router-link>
+<!--         <a href="#/">放回首页</a>-->
+      </div>
+   </div>
+</template>
+
+<script lang="ts">
+   export default {
+      name: 'NotFound'
+   };
+</script>
+
+<style scoped lang="sass">
+
+</style>
