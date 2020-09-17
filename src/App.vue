@@ -5,35 +5,15 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import "~@/assets/style/reset.scss";
+  @import "~@/assets/style/helper.scss";
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-  * {
-    margin: 0;
-    padding: 0;
-  }
  body {
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
    line-height: 1.5;
+   font-family: $font-hei;
+   color: #333;
  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+
 </style>

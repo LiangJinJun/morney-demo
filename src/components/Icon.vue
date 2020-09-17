@@ -25,7 +25,5 @@
       vertical-align: -0.15em;
       fill: currentColor;
       overflow: hidden;
-      color: #000000;
-      /*background: #2c3e50;*/
    }
 </style>
