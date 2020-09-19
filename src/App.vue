@@ -15,5 +15,9 @@
    font-family: $font-hei;
    color: #333;
  }
-
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 </style>

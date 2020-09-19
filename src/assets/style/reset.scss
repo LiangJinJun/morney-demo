@@ -7,3 +7,12 @@
     text-decoration: none;
     color: inherit;
   }
+ ul,ol {
+   list-style: none;
+ }
+ button,input {
+   font:inherit;   /*设置它的字体是继承的*/
+ }
+ :focus {
+   outline:none
+ }
