@@ -9,24 +9,30 @@
 
 <script lang="ts">
    import Vue from 'vue'
-   import {Component} from 'vue-property-decorator';
+   import {Component, Prop} from 'vue-property-decorator';
 
    @Component
-   @Component({
-      props: {
-         propMessage: String
-      }
-   })
 
   export default class Types extends  Vue {
       type='-' //'-'表示支出 '+' 表示收入
-      helloMsg='Hello,'+this.propMessage;
+
+      @Prop(Number) readonly xxx: number | undefined
+
      selectType(type: string){ // 给我一个新的 type  这个type只能是'-'和'+' 中的一个
             if(type !== '-' && type !== '+'){   // 如果不是这个两个的其中一个那么就会报错
               throw new Error('type is unknown')
             }
             this.type=type  //  type 等于你给我的type
          }
+
+
+         mounted(){
+         if(this.xxx===undefined){
+            console.log('没有xxx');
+         }else {
+            console.log(this.xxx.toString());
+         }
+      }
   }
 
 
