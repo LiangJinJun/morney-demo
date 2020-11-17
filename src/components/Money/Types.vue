@@ -7,27 +7,49 @@
    </div>
 </template>
 
-<script>
-   export default {
-      name: 'Types',
-      props:['xxx'],
-      data(){
-         return {
-            type:'-'  //'-'表示支出 '+' 表示收入
-         }
-      },
-     mounted(){
-        console.log(this.xxx)
-     },
-      methods:{
-         selectType(type){ // 给我一个新的 type  这个type只能是'-'和'+' 中的一个
+<script lang="ts">
+   import Vue from 'vue'
+   import {Component} from 'vue-property-decorator';
+
+   @Component
+   @Component({
+      props: {
+         propMessage: String
+      }
+   })
+
+  export default class Types extends  Vue {
+      type='-' //'-'表示支出 '+' 表示收入
+      helloMsg='Hello,'+this.propMessage;
+     selectType(type: string){ // 给我一个新的 type  这个type只能是'-'和'+' 中的一个
             if(type !== '-' && type !== '+'){   // 如果不是这个两个的其中一个那么就会报错
               throw new Error('type is unknown')
             }
             this.type=type  //  type 等于你给我的type
          }
-      }
-   };
+  }
+
+
+   // export default {
+   //    name: 'Types',
+   //    props:['xxx'],
+   //    data(){
+   //       return {
+   //          type:'-'  //'-'表示支出 '+' 表示收入
+   //       }
+   //    },
+   //   mounted(){
+   //      console.log(this.xxx)
+   //   },
+   //    methods:{
+   //       selectType(type){ // 给我一个新的 type  这个type只能是'-'和'+' 中的一个
+   //          if(type !== '-' && type !== '+'){   // 如果不是这个两个的其中一个那么就会报错
+   //            throw new Error('type is unknown')
+   //          }
+   //          this.type=type  //  type 等于你给我的type
+   //       }
+   //    }
+   // };
 </script>
 
 <style scoped lang="scss">
