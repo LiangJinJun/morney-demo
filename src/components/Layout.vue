@@ -9,7 +9,7 @@
 
 <script lang="ts">
    export default {
-      props: ['classPrefix'],
+      props: ['classPrefix' ],
       name: 'Layout'
    };
 </script>

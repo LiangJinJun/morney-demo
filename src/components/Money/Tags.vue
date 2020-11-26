@@ -41,6 +41,7 @@
 <style scoped lang="scss">
 .tags {
       flex-grow: 1; /*剩下的位置沾满*/
+      background-color: white;
       display: flex;
       flex-direction: column-reverse;
       font-size: 15px;
