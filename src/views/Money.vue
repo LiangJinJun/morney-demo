@@ -47,14 +47,11 @@
           }
 
           saveRecord(){
-            const record2: RecordItem=recordListModel.clone(this.record);
-            record2.createdAt= new Date()  /*当前时间*/
-            this.recordList.push(record2)
-            console.log(this.recordList);
+            recordListModel.create(this.record)
           }
           @Watch('recordList')
           onRecordListChanged(){
-            recordListModel.save(this.recordList);
+            recordListModel.save();
           }
    }
 </script>
