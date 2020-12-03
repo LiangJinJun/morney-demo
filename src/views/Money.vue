@@ -14,36 +14,35 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-   import NumberPad from '@/components/Money/NumberPad.vue';
-   import Types from '@/components/Money/Types.vue';
-   import FormItem from '@/components/Money/FormItem.vue';
-   import Tags from '@/components/Money/Tags.vue';
-    import {Component} from 'vue-property-decorator';
-    import Button from '@/components/Button.vue';
+  import Vue from 'vue';
+  import NumberPad from '@/components/Money/NumberPad.vue';
+  import Types from '@/components/Money/Types.vue';
+  import FormItem from '@/components/Money/FormItem.vue';
+  import Tags from '@/components/Money/Tags.vue';
+  import {Component} from 'vue-property-decorator';
+  import Button from '@/components/Button.vue';
 
 
+  @Component({
+    components: {Button, Tags, FormItem, Types, NumberPad},
+  })
+  export default class Money extends Vue {
+    get recordList() {
+      return this.$store.state.recordList;
+    }
 
+    record: RecordItem = {
+      tags: [],   /*初始值*/
+      notes: '',
+      type: '-',
+      amount: 0
+    };
 
-    @Component({
-      components: {Button, Tags,FormItem, Types, NumberPad},
-      computed: {
-       recordList(){
-         return this.$store.state.recordList;
-       }
-      }
-    })
-   export default class Money extends Vue{
-          record: RecordItem={
-            tags:[],   /*初始值*/
-            notes:'',
-            type:'-',
-            amount:0
-          }
-          created(){
-            this.$store.commit('fetchRecords')
-          }
-          saveRecord(){
+    created() {
+      this.$store.commit('fetchRecords');
+    }
+
+    saveRecord() {
             this.$store.commit('createRecord',this.record)
           }
 
