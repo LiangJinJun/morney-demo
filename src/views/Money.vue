@@ -45,7 +45,6 @@
     saveRecord() {
             this.$store.commit('createRecord',this.record)
           }
-
    }
 </script>
 
