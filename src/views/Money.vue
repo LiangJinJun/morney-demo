@@ -52,7 +52,7 @@
 </script>
 
 <style lang="scss" scoped>
-   .layout-content {
+  ::v-deep .layout-content {
       /*border: 3px solid red;*/
       display: flex;
       flex-direction: column-reverse; /*从下面开始布局*/
