@@ -2,7 +2,7 @@
  <div >
     <Layout>
       <Tabs class-prefix="type" :data-source="recordTypeList" :value.sync="type"/>
-      <Tabs class-prefix="interval" :data-source="intervalList" :value.sync="interval"/>
+      <Tabs class-prefix="interval" :data-source="intervalList" :value.sync="interval" />
       <div>
         type:{{type}}
         <br/>
@@ -13,18 +13,23 @@
 </template>
 
 <style scoped lang="scss">
-  ::v-deep .type-tabs-item {
-     background: white;
-     &.selected {
+  ::v-deep {
+    .type-tabs-item {
+      background: white;
+
+      &.selected {
         background: #c4c4c4;
+
         &::after {
-           display: none;
+          display: none;
         }
-     }
-  }
-  ::v-deep li.interval-tabs-item {
+      }
+    }
+   .interval-tabs-item {
     height: 48px;
+   }
   }
+
 </style>-
 
 <script lang="ts">
