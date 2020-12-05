@@ -51,7 +51,7 @@
    }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
    .layout-content {
       /*border: 3px solid red;*/
       display: flex;

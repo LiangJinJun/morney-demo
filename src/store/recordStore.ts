@@ -12,7 +12,7 @@ const recordStore ={
   },
   createRecord(record: RecordItem) {
     const record2: RecordItem = clone(record);
-    record2.createdAt = new Date();  /*当前时间*/
+    record2.createdAt = new Date().toISOString();  /*当前时间*/
     this.recordList && this.recordList.push(record2);
     recordStore.saveRecords()
   },
