@@ -1,8 +1,9 @@
 <template>
    <div>
       <ul class="types">
-         <li :class="value === '-' && 'selected'" @click="selectType('-')">支出</li>
-         <li :class="value === '+' && 'selected'" @click="selectType('+')">收入</li>
+         <li :class="{[classPrefix+'-item']:classPrefix,selected: value==='-'}"
+              @click="selectType('-')">支出</li>
+         <li :class="{[classPrefix+'-item']:classPrefix,selected: value==='+'}" @click="selectType('+')">收入</li>
       </ul>
    </div>
 </template>
@@ -15,7 +16,8 @@
 
   export default class Types extends  Vue {
 
-      @Prop() readonly  value!: string;
+      @Prop(String) readonly  value!: string;
+      @Prop(String)  classPrefix?: string;
 
      selectType(type: string){ // 给我一个新的 type  这个type只能是'-'和'+' 中的一个
             if(type !== '-' && type !== '+'){   // 如果不是这个两个的其中一个那么就会报错
@@ -51,14 +53,14 @@
 
 <style scoped lang="scss">
  .types {
-      background-color: #c3c4c4;
+      background-color: #c4c4c4;
       display: flex;
       text-align: center;
-      font-size: 23px;
+      font-size: 24px;
 
       > li {
-         width: 49%;
-         height: 63px;
+         width: 50%;
+         height: 64px;
          display: flex;
          justify-content: center;
          align-items: center;
@@ -70,9 +72,9 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 99%;
-            height: 3px;
-            background: #332;
+            width: 100%;
+            height: 4px;
+            background: #333;
          }
 
       }
