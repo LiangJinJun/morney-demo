@@ -44,12 +44,14 @@
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid #e6e6e6;
+        color: #5F9EA0;
         svg {
           width: 18px;
           height: 18px;
           color: #666;
           margin-right: 16px;
         }
+
       }
     }
   .createTag {

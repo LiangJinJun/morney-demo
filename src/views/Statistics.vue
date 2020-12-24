@@ -27,7 +27,7 @@
 <script lang="ts">
   import Vue from 'vue';
   import {Component} from 'vue-property-decorator';
-  import Tabs from '@/components/Tabs.vue';
+  import Tabs from '@/components/Money/Tabs.vue';
   import recordTypeList from '@/constants/recordTypeList';
   import dayjs from 'dayjs';
   import clone from '@/lib/clone';
@@ -109,7 +109,7 @@
       background: #c4c4c4;
 
       &.selected {
-        background: white;
+        background: #5F9EA0;
 
         &::after {
           display: none;

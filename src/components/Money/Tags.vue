@@ -6,7 +6,6 @@
       <ul class="current">
          <li v-for="tag in tagList" :key="tag.id" @click="toggle(tag)" :class="{selected: selectedTags.indexOf(tag)>=0}">{{tag.name}}</li>
       </ul>
-
    </div>
 </template>
 
@@ -58,7 +57,7 @@
          flex-wrap: wrap;
 
          > li {
-            $bg: #d9d9d9;
+            $bg: #5F9EA0;
             background: #d9d9d9;
             $h: 24px;
             height: $h;
@@ -68,7 +67,8 @@
             margin-right: 12px;
            margin-top: 4px;
             &.selected{
-               background: darken($bg,50%);
+               /*background: darken($bg,50%);*/
+               background-color: $bg;
                color: white;
             }
          }
@@ -80,7 +80,7 @@
          button {
             background: transparent;
             border: none;
-            color: #999;
+            color: #5F9EA0;
             border-bottom: 1px solid;
             padding: 0 4px;
          }

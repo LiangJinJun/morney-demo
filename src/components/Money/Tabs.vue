@@ -17,8 +17,12 @@
   @Component
   export default class Tabs extends Vue {
     @Prop({required: true, type: Array}) dataSource!: DataSourceItem[];
+    /*dataSource! --- 在后面加叹号说明让TypeScript不用管这句话*/
+    /*required: true 是否必需，true为必须*/
+    /*readonly --- 只读，不能更改*/
     @Prop(String) readonly value!: string;
     @Prop(String) classPrefix?: string;
+    /*后面加个问号，说明这个属性有可能不存在*/
     @Prop({type:String,default:'64px'})
     height!: string
 
@@ -37,7 +41,7 @@
 
 <style scoped lang="scss">
   .tabs {
-    background-color: #c4c4c4;
+    background-color: #5F9EA0;
     display: flex;
     text-align: center;
     font-size: 24px;
@@ -48,6 +52,9 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      &.selected {
+        color: white;
+      }
 
       &.selected::after {
         content: '';

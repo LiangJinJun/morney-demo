@@ -11,7 +11,8 @@
                 field-name="标签名" placeholder="请输入标签名"/>
     </div>
     <div class="button-wrapper">
-   <Button @click="remove">删除标签</Button>
+      <Button @click="remove">删除标签</Button>
+      <Button @click="goBack">保存修改</Button>
     </div>
   </Layout>
 </template>
@@ -49,7 +50,7 @@
        }
      }
      goBack(){
-       this.$router.back();
+       this.$router.back();``
      }
   }
 </script>
@@ -83,5 +84,8 @@
         text-align: center;
         padding: 16px;
         margin-top: 24px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
       }
 </style>

@@ -21,7 +21,7 @@
   import {Component} from 'vue-property-decorator';
   import Button from '@/components/Button.vue';
   import recordTypeList from '@/constants/recordTypeList';
-  import Tabs from '@/components/Tabs.vue';
+  import Tabs from '@/components/Money/Tabs.vue';
 
 
   @Component({
